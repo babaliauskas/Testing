@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 import pizzaData from './pizza.json';
 import Filter from './component/Filter';
@@ -18,19 +17,7 @@ class App extends React.Component {
     this.handleSortPizzas = this.handleSortPizzas.bind(this);
   }
 
-  // fetchPizzaList() {
-  //   var self = this;
-  //   self.setState({ loading: true });
-  //   axios.get(pizzaData).then(function(data) {
-  //     self.setState({
-  //       pizzas: data.pizzas,
-  //       loading: false
-  //     });
-  //   });
-  // }
-
   fetchPizzaList() {
-    console.log(pizzaData);
     this.setState({ pizzas: pizzaData.pizzas });
   }
 
