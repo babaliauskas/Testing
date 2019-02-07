@@ -1,9 +1,7 @@
 import React from 'react';
 
 import pizzaData from './pizza.json';
-import Filter from './component/Filter';
-
-// const getPizzaUrl = './pizza.json';
+import Filter from './components/Filter/Filter';
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +9,7 @@ class App extends React.Component {
 
     this.state = {
       pizzas: [],
-      loading: false
+      sort: false,
     };
     this.fetchPizzaList = this.fetchPizzaList.bind(this);
     this.handleSortPizzas = this.handleSortPizzas.bind(this);
@@ -22,40 +20,35 @@ class App extends React.Component {
   }
 
   handleSortPizzas() {
-    let pizzas;
-    const { sort } = this.state;
-    const pizzasCopy = [...this.state.pizzas];
+    let newPizzas;
+    const { sort, pizzas } = this.state;
+    const pizzasCopy = [...pizzas];
 
     if (pizzasCopy && sort) {
-      pizzas = pizzasCopy.sort((a, b) =>
-        a.localeCompare(b, undefined, { sensitivity: 'base' })
-      );
+      newPizzas = pizzasCopy.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
     } else if (pizzasCopy && !sort) {
-      pizzas = pizzasCopy.sort((a, b) =>
-        b.localeCompare(a, undefined, { sensitivity: 'base' })
-      );
+      newPizzas = pizzasCopy.sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }));
     }
+
     this.setState({
-      pizzas,
-      sort: !sort
+      pizzas: newPizzas,
+      sort: !sort,
     });
   }
 
   render() {
-    const { pizzas, loading, title } = this.state;
+    const { pizzas } = this.state;
     return (
-      <div>
-        <h3>{title}</h3>
-
-        <button className="btn-fetch" onClick={this.fetchPizzaList}>
+      <div className="App">
+        <button
+          type="button"
+          className="btn-fetch"
+          onClick={this.fetchPizzaList}
+        >
           Show Pizza Options
         </button>
 
-        <Filter
-          pizzas={pizzas}
-          loading={loading}
-          handleSortPizzas={this.handleSortPizzas}
-        />
+        <Filter pizzas={pizzas} handleSortPizzas={this.handleSortPizzas} />
       </div>
     );
   }

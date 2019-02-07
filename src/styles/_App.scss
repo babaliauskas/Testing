@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.App {
+  background-image: url('../img/background.jpg');
+  position: relative;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  .btn-fetch {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    background: $btn-green;
+    border: 2px solid $btn-border-color;
+    box-shadow: 2px 3px 10px $btn-shadow-color;
+    border-radius: 5px;
+    color: $btn-color;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .btn-fetch:hover {
+    background: $btn-color-hover;
+    border: 2px solid $btn-border-color;
+    color: $btn-color;
+  }
+}

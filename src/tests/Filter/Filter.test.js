@@ -12,7 +12,7 @@ describe('Filter', () => {
   const props = {
     pizzas: ['Sausage', 'Cheese'],
     loading: false,
-    handleSortPizzas: mockSortPizzas
+    handleSortPizzas: mockSortPizzas,
   };
   const filter = shallow(<Filter {...props} />);
 

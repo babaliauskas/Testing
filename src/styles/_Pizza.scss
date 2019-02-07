@@ -1,0 +1,12 @@
+.Pizza {
+  width: 15%;
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin: 10px auto;
+  color: rgb(245, 241, 241);
+  list-style-type: none;
+  transition: .5s;
+}
+.Pizza:hover {
+  transform: scale(1.2)
+}

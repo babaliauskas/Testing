@@ -1,0 +1,32 @@
+.FilterInput {
+  width: 50%;
+  margin: auto;
+  input {
+    font-size: 1rem;
+    width: 300px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: .5s;
+  }
+  input:focus {
+    background-color: rgb(196, 227, 253);
+  }
+  .btn-sort {
+    padding: 10px;
+    border-radius: 5px;
+    color: $btn-color;
+    font-size: 1rem;
+    background: $btn-green;
+    border: 2px solid $btn-border-color;
+    box-shadow: 2px 3px 10px $btn-shadow-color;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .btn-sort:hover {
+    background-color: $btn-color-hover;
+    border: 2px solid $btn-border-color;
+    color: $btn-color;
+  }
+}
