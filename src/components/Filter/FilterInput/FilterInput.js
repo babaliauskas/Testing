@@ -7,10 +7,11 @@ const FilterInput = ({ handleFilter, filter, handleSortPizzas }) => (
     <button className="btn-sort" type="button" onClick={handleSortPizzas}>Sort Pizzas</button>
   </div>
 );
+
 FilterInput.propTypes = {
   handleFilter: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
   handleSortPizzas: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 export default FilterInput;

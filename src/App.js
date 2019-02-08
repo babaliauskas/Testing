@@ -29,7 +29,6 @@ class App extends React.Component {
     } else if (pizzasCopy && !sort) {
       newPizzas = pizzasCopy.sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }));
     }
-
     this.setState({
       pizzas: newPizzas,
       sort: !sort,

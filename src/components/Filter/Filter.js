@@ -37,7 +37,6 @@ class Filter extends Component {
         {pizzas.length > 0 ? (
           <FilterInput
             handleFilter={this.handleFilter}
-            pizzas={pizzas}
             filter={filter}
             handleSortPizzas={handleSortPizzas}
           />
@@ -50,8 +49,12 @@ class Filter extends Component {
   }
 }
 
+Filter.defaultProps = {
+  pizzas: [],
+};
+
 Filter.propTypes = {
-  pizzas: PropTypes.instanceOf(Array).isRequired,
+  pizzas: PropTypes.instanceOf(Array),
   handleSortPizzas: PropTypes.func.isRequired,
 };
 
